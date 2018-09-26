@@ -1,0 +1,27 @@
+{
+  "name": "remove-contacts",
+  "version": "1.0.0",
+  "description": "Remove LinkedIn contacts that never responded to initial invite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herokuprojects666/remove-contacts.git"
+  },
+  "keywords": [
+    "LinkedIn"
+  ],
+  "author": "Craggoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herokuprojects666/remove-contacts/issues"
+  },
+  "homepage": "https://github.com/herokuprojects666/remove-contacts#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "nickjs": "^0.3.6",
+    "underscore": "^1.9.1"
+  }
+}
