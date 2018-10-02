@@ -9,7 +9,6 @@ const nick = new Nick({
 
 let badRedirect = false
 let blacklist = "{}"
-let count = 0
 let pagesRemaining = 2
 let session = undefined
 
@@ -23,12 +22,6 @@ catch (e) {
 }
 
 const parsedArgs = _.omit(parseArgs(process.argv), ['_'])
-if (parsedArgs.c) {
-	count = parsedArgs.c
-}
-if (parsedArgs.count) {
-	count = parsedArgs.count
-}
 if(!parsedArgs.s && !parsedArgs.session) {
 	throw new Error('Missing session argument. Please supply it via -s or --session')
 }
@@ -43,8 +36,7 @@ if (parsedArgs.session) {
 const buildBlacklist = function() {
 	return new Promise(function(r, j) {
 		fs.writeFileSync('blacklist.json', JSON.stringify(blacklist), 'utf8')
-		console.log('final blacklist is ', blacklist)
-		console.log(_.keys(blacklist).length)
+		console.log('blacklist length is ', _.keys(blacklist).length)
 		r()
 		nick.exit()
 	})
@@ -133,7 +125,7 @@ async function findElements(tab) {
 	}
 }
 
-/** Build up a meta object that represents the list of pages/clickable buttons below the list of contacts */
+/** Build up a meta object that represents the list of pages/clickable buttons below the list of pending invites */
 function getPages(arg, cb) {
 	/** Right page incrementor */
 	const nextPage = $('.mn-invitation-pagination')
