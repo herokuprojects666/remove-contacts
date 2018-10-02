@@ -11,4 +11,4 @@ In order to run the script you will need to execute it in node. The bits you nee
 
 `-s` is a required paramter. This is the session cookie LinkedIn uses to determine if you're logged in. This can be found in dev tools by looking at the cookies and copy/pasting the value in `li_at` key.
 
-At current, the amount of pages of pending invites that get removed is limited to 2. I will be updating this in the future to support removing more pages at once.
+At current, the amount of pages of pending invites that get removed is limited to 2. I will be updating this in the future to support removing more a user supplied amount of pages instead.
